@@ -126,7 +126,7 @@ function App() {
             <ContactSection />
             <footer className="border-t border-[var(--border-hex)] py-8">
               <div className="mx-auto max-w-[1120px] px-4 text-center text-xs text-muted-foreground sm:px-6 lg:px-8">
-                © {new Date().getFullYear()} Abdul Azis · JQ Tech Solution · Lampung, Indonesia
+                © {new Date().getFullYear()} Abdul Azis · Lampung, Indonesia
               </div>
             </footer>
           </div>

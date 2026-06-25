@@ -7,7 +7,6 @@ export const PROFILE = {
   name: "Abdul Azis",
   title: "Full Stack Developer",
   fullTitle: "Full Stack Web Developer & IoT Engineer",
-  company: "JQ Tech Solution",
   location: "Lampung, Indonesia",
   email: "abdulazis.dev1@gmail.com",
   whatsapp: "6282176849811", // placeholder — international format, no '+'
