@@ -2,7 +2,6 @@ import { Mail, MessageCircle, ExternalLink, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, MapPin, Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { SectionShell } from "./SectionShell";
 import { Input } from "./ui/input";
