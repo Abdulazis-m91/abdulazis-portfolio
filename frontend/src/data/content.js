@@ -21,8 +21,8 @@ export const PROFILE = {
     "& Freelancer",
   ],
   stats: [
-    { label: "Years Exp", value: 3, suffix: "+" },
-    { label: "Projects", value: 8, suffix: "+" },
+    { label: "Years Exp", value: 4, suffix: "+" },
+    { label: "Projects", value: 12, suffix: "+" },
     { label: "Full Stack Dev", value: null, text: "Full Stack Dev" },
   ],
 };
