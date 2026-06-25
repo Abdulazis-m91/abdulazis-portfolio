@@ -20,11 +20,11 @@ export const PROFILE = {
     "& IoT Engineer",    
     "& Freelancer",
   ],
-  stats: [
-    { label: "Years Exp", value: 4, suffix: "+" },
-    { label: "Projects", value: 12, suffix: "+" },
+stats: [
+    { label: "Years Exp", value: 3, suffix: "+" },
+    { label: "Projects", value: 11, suffix: "+" },
     { label: "Full Stack Dev", value: null, text: "Full Stack Dev" },
-  ],
+],
 };
 
 export const SOCIALS = [
