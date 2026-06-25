@@ -15,7 +15,7 @@ export const PROFILE = {
     "https://images.unsplash.com/photo-1649044747879-d77b1dbcecf6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwZGV2ZWxvcGVyJTIwcG9ydHJhaXQlMjBzdHVkaW8lMjBoZWFkc2hvdHxlbnwwfHx8Ymx1ZXwxNzgyMzYwMzA1fDA&ixlib=rb-4.1.0&q=85&w=600",
   cv: "/cv.pdf",
   description:
-    "I build scalable web applications and IoT systems for real institutional clients across Indonesia. Founder of JQ Tech Solution.",
+    "I'm a Full Stack Developer specializing in building scalable web applications using React, TypeScript, Node.js, PHP, Laravel, and MySQL — with hands-on experience delivering real-world solutions for institutional clients across Indonesia.",
   typingPhrases: [
     "I'm a Full Stack Web Developer.",
     "& IoT Engineer",

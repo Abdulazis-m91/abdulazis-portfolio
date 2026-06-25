@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     /* shadcn HSL tokens mapped to the fixed light palette */
@@ -157,4 +158,8 @@ body.modal-open [data-testid="bottom-nav"] {
 
 @layer base {
   [data-debug-wrapper="true"] { display: contents !important; }
+}
+
+#emergent-badge {
+  display: none !important;
 }
