@@ -57,11 +57,11 @@ export const PROJECTS = [
       "SmartPresence is an end-to-end attendance platform built for Yayasan Baitulloh. ESP32 microcontrollers read RFID cards (RC522) and stream taps to a PHP/MySQL backend, while a React + TypeScript dashboard provides live attendance monitoring, recap reports, and automated notifications. Designed for reliability in low-connectivity environments with offline buffering and instant sync once online.",
     tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID"],
     images: [
-      img("1551288049-bebda4e38f71"),
-      img("1518770660439-4636190af475"),
-      img("1581091226825-a6a2a5aee158"),
-      img("1460925895917-afdab827c52f"),
-    ],
+    "/images/rfid-software.webp",
+    "/images/smartpresence-1.webp",
+    "/images/tampilan.webp",
+    "/images/tester.webp"
+  ],
     demo: "#",
     live: "https://yayasanbaitulloh.com",
   },
