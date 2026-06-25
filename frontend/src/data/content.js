@@ -11,8 +11,7 @@ export const PROFILE = {
   location: "Lampung, Indonesia",
   email: "abdulazis.dev1@gmail.com",
   whatsapp: "6282176849811", // placeholder — international format, no '+'
-  photo:
-    "https://images.unsplash.com/photo-1649044747879-d77b1dbcecf6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwZGV2ZWxvcGVyJTIwcG9ydHJhaXQlMjBzdHVkaW8lMjBoZWFkc2hvdHxlbnwwfHx8Ymx1ZXwxNzgyMzYwMzA1fDA&ixlib=rb-4.1.0&q=85&w=600",
+  photo: "/foto-profil.webp",
   cv: "/cv.pdf",
   description:
     "I'm a Full Stack Developer specializing in building scalable web applications using React, TypeScript, Node.js, PHP, Laravel, and MySQL — with hands-on experience delivering real-world solutions for institutional clients across Indonesia.",
@@ -30,7 +29,7 @@ export const PROFILE = {
 
 export const SOCIALS = [
   { name: "GitHub", icon: "github", url: "https://github.com/Abdulazis-m91" },
-  { name: "LinkedIn", icon: "linkedin", url: "www.linkedin.com/in/abdulazis-f91" },
+  { name: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/abdulazis-f91" },
   { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/jqueryaziz" },
   { name: "Portfolio", icon: "globe", url: "https://abdulazis.my.id" },
 ];
