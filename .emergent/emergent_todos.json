@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Phase 1: Core contact flow (FastAPI /api/contact + WhatsApp/mailto prefill + Mongo persist)",
+    "status": "pending"
+  },
+  {
+    "content": "Get design guidelines from design_agent (forward user's explicit color/layout choices)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Build full frontend (hero state, sidebar state, all sections, cursor, theme toggle, animations)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: Backend contact endpoint + placeholder assets (profile, screenshots, CV PDF)",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: All user stories covered in development",
+    "status": "pending"
+  },
+  {
+    "content": "Phase 2: End to End Testing using Testing Agent",
+    "status": "pending"
+  }
+]
