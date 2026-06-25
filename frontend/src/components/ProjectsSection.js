@@ -114,7 +114,7 @@ export const ProjectsSection = () => {
       eyebrow="Selected Work"
       title="Projects"
     >
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-2">
         {PROJECTS.map((p, i) => (
           <ProjectCard key={p.id} project={p} index={i} onOpen={setSelected} />
         ))}
