@@ -45,38 +45,34 @@ function App() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > window.innerHeight * 0.6);
+      // Bottom fallback: ensure the last section highlights at page end
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+      if (atBottom) setActive("contact");
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scrollspy via IntersectionObserver (threshold 0.3 => 30% visible = active)
+  // Scrollspy: a section only becomes active when it dominates the upper-center
+  // band of the viewport (rootMargin shrinks the observer to a thin band).
   useEffect(() => {
     const ids = ["home", ...NAV_ITEMS.map((n) => n.id)];
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter(Boolean);
 
-    const visibility = new Map();
-
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          visibility.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0);
-        });
-        // Pick the most-visible section that is at least 30% visible.
-        let bestId = null;
-        let bestRatio = 0;
-        visibility.forEach((ratio, id) => {
-          if (ratio >= 0.3 && ratio > bestRatio) {
-            bestRatio = ratio;
-            bestId = id;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
           }
         });
-        if (bestId) setActive(bestId);
       },
-      { threshold: [0, 0.3, 0.5, 0.75, 1] }
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();

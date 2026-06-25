@@ -1,13 +1,6 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Globe, Play } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "./ui/dialog";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Globe, Play, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { SectionShell } from "./SectionShell";
 import { PROJECTS } from "../data/content";
@@ -126,89 +119,157 @@ export const ProjectsSection = () => {
         ))}
       </div>
 
-      <Dialog open={open} onOpenChange={(v) => !v && setSelected(null)}>
-        <DialogContent
-          data-testid="project-detail-modal"
-          className="max-h-[90vh] max-w-[920px] overflow-y-auto rounded-[var(--radius-lg)] border border-[var(--border-hex)] bg-[var(--bg)] p-0"
+      <ProjectDetailModal project={selected} open={open} onClose={() => setSelected(null)} />
+    </SectionShell>
+  );
+};
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3, ease: "easeOut" } },
+  exit: { opacity: 0, transition: { duration: 0.25, ease: "easeIn" } },
+};
+
+const contentVariants = {
+  hidden: { opacity: 0, scale: 0.85, y: 20 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.35, ease: [0.34, 1.56, 0.64, 1] },
+  },
+  exit: {
+    opacity: 0,
+    scale: 0.9,
+    y: 10,
+    transition: { duration: 0.25, ease: "easeIn" },
+  },
+};
+
+const ProjectDetailModal = ({ project, open, onClose }) => {
+  // ESC to close + body scroll lock while open
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open, onClose]);
+
+  return (
+    <AnimatePresence mode="wait">
+      {open && project && (
+        <motion.div
+          key="overlay"
+          variants={overlayVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          onClick={onClose}
+          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4 backdrop-blur-[8px]"
+          aria-hidden="true"
         >
-          {selected && (
-            <div>
-              <DialogHeader className="space-y-2 p-6 pb-0">
-                <DialogTitle className="font-display text-2xl font-semibold text-[var(--fg)]">
-                  {selected.title}
-                </DialogTitle>
-                <p className="font-mono-accent text-xs text-[var(--primary-hex)]">
-                  {selected.client}
-                  {selected.domain ? ` · ${selected.domain}` : ""} · {selected.year}
-                </p>
-                <DialogDescription className="sr-only">
-                  Project details for {selected.title} by {selected.client}
-                </DialogDescription>
-              </DialogHeader>
+          <motion.div
+            key="content"
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${project.title} details`}
+            data-testid="project-detail-modal"
+            className="relative max-h-[90vh] w-full max-w-[920px] overflow-y-auto rounded-[var(--radius-lg)] border border-[var(--border-hex)] bg-[var(--bg)] shadow-[0_30px_120px_rgba(0,0,0,0.55)]"
+          >
+            <button
+              type="button"
+              onClick={onClose}
+              data-testid="project-modal-close-button"
+              aria-label="Close"
+              className="absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-lg border border-[var(--border-hex)] bg-[var(--surface)] text-[var(--fg)] transition-colors hover:bg-[rgba(37,99,235,0.10)]"
+            >
+              <X className="h-4 w-4" />
+            </button>
 
-              <div className="p-6">
-                <div className="grid grid-cols-2 gap-3">
-                  {selected.images.map((src, i) => (
-                    <div
-                      key={i}
-                      className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--border-hex)] bg-[var(--surface-2)]"
-                    >
-                      <img
-                        src={src}
-                        alt={`${selected.title} screenshot ${i + 1}`}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
+            <div className="space-y-2 p-6 pb-0 pr-16">
+              <h3 className="font-display text-2xl font-semibold text-[var(--fg)]">
+                {project.title}
+              </h3>
+              <p className="font-mono-accent text-xs text-[var(--primary-hex)]">
+                {project.client}
+                {project.domain ? ` · ${project.domain}` : ""} · {project.year}
+              </p>
+            </div>
 
-                <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-                  {selected.description}
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {selected.tech.map((t) => (
-                    <TechTag key={t}>{t}</TechTag>
-                  ))}
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <Button
-                    asChild={!!selected.demo && selected.demo !== "#"}
-                    disabled={!selected.demo || selected.demo === "#"}
-                    data-testid="project-modal-live-demo-button"
-                    className="h-11 rounded-xl bg-[var(--primary-hex)] px-5 text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+            <div className="p-6">
+              <div className="grid grid-cols-2 gap-3">
+                {project.images.map((src, i) => (
+                  <div
+                    key={i}
+                    className="relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--border-hex)] bg-[var(--surface-2)]"
                   >
-                    {selected.demo && selected.demo !== "#" ? (
-                      <a href={selected.demo} target="_blank" rel="noopener noreferrer">
-                        <Play className="mr-2 h-4 w-4" /> Live Demo
-                      </a>
-                    ) : (
-                      <span><Play className="mr-2 inline h-4 w-4" /> Live Demo</span>
-                    )}
-                  </Button>
-                  <Button
-                    asChild={!!selected.live}
-                    disabled={!selected.live}
-                    variant="outline"
-                    data-testid="project-modal-go-website-button"
-                    className="h-11 rounded-xl border-[var(--border-hex)] px-5 hover:bg-[rgba(37,99,235,0.08)] disabled:opacity-50"
-                  >
-                    {selected.live ? (
-                      <a href={selected.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="mr-2 h-4 w-4" /> Go to Website
-                      </a>
-                    ) : (
-                      <span><ExternalLink className="mr-2 inline h-4 w-4" /> Go to Website</span>
-                    )}
-                  </Button>
-                </div>
+                    <img
+                      src={src}
+                      alt={`${project.title} screenshot ${i + 1}`}
+                      loading="lazy"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+                {project.description}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <TechTag key={t}>{t}</TechTag>
+                ))}
+              </div>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Button
+                  asChild={!!project.demo && project.demo !== "#"}
+                  disabled={!project.demo || project.demo === "#"}
+                  data-testid="project-modal-live-demo-button"
+                  className="h-11 rounded-xl bg-[var(--primary-hex)] px-5 text-white hover:bg-[#1D4ED8] disabled:opacity-50"
+                >
+                  {project.demo && project.demo !== "#" ? (
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <Play className="mr-2 h-4 w-4" /> Live Demo
+                    </a>
+                  ) : (
+                    <span><Play className="mr-2 inline h-4 w-4" /> Live Demo</span>
+                  )}
+                </Button>
+                <Button
+                  asChild={!!project.live}
+                  disabled={!project.live}
+                  variant="outline"
+                  data-testid="project-modal-go-website-button"
+                  className="h-11 rounded-xl border-[var(--border-hex)] px-5 hover:bg-[rgba(37,99,235,0.08)] disabled:opacity-50"
+                >
+                  {project.live ? (
+                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" /> Go to Website
+                    </a>
+                  ) : (
+                    <span><ExternalLink className="mr-2 inline h-4 w-4" /> Go to Website</span>
+                  )}
+                </Button>
               </div>
             </div>
-          )}
-        </DialogContent>
-      </Dialog>
-    </SectionShell>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
