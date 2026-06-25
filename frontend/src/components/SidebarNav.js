@@ -32,8 +32,8 @@ export const SidebarNav = ({ active, onNavigate }) => {
 
       <div className="my-5 h-px w-full bg-[var(--border-hex)]" />
 
-      {/* Nav */}
-      <nav className="no-scrollbar flex-1 space-y-1 overflow-y-auto">
+      {/* Nav (breaks out to the sidebar edges so the active bar is flush) */}
+      <nav className="no-scrollbar -mx-5 flex-1 space-y-1 overflow-y-auto py-1">
         {NAV_ITEMS.map((item) => {
           const Icon = navIcons[item.icon];
           const isActive = active === item.id;
@@ -42,18 +42,13 @@ export const SidebarNav = ({ active, onNavigate }) => {
               key={item.id}
               onClick={() => onNavigate(item.id)}
               data-testid={`nav-${item.id}-link`}
-              className={`group relative flex min-h-[44px] w-full items-center gap-3 rounded-xl px-3 text-sm transition-colors ${
+              aria-current={isActive ? "true" : undefined}
+              className={`flex h-12 w-full items-center gap-3 border-l-[3px] pl-[17px] pr-4 text-sm transition-colors ${
                 isActive
-                  ? "bg-[rgba(37,99,235,0.14)] text-[var(--fg)] ring-1 ring-[rgba(37,99,235,0.35)]"
-                  : "text-muted-foreground hover:bg-[rgba(37,99,235,0.10)] hover:text-[var(--fg)]"
+                  ? "border-[#2563EB] bg-[rgba(37,99,235,0.15)] text-[var(--fg)]"
+                  : "border-transparent text-muted-foreground hover:bg-[rgba(37,99,235,0.10)] hover:text-[var(--fg)]"
               }`}
             >
-              {isActive && (
-                <motion.span
-                  layoutId="sidebar-active-bar"
-                  className="absolute left-0 top-1/2 h-6 w-[3px] -translate-y-1/2 rounded-full bg-[var(--primary-hex)]"
-                />
-              )}
               <Icon className="h-[18px] w-[18px]" />
               <span className="font-medium">{item.label}</span>
             </button>

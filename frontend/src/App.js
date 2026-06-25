@@ -51,26 +51,39 @@ function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Scrollspy via IntersectionObserver
+  // Scrollspy via IntersectionObserver (threshold 0.3 => 30% visible = active)
   useEffect(() => {
     const ids = ["home", ...NAV_ITEMS.map((n) => n.id)];
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter(Boolean);
+
+    const visibility = new Map();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActive(visible[0].target.id);
+        entries.forEach((e) => {
+          visibility.set(e.target.id, e.isIntersecting ? e.intersectionRatio : 0);
+        });
+        // Pick the most-visible section that is at least 30% visible.
+        let bestId = null;
+        let bestRatio = 0;
+        visibility.forEach((ratio, id) => {
+          if (ratio >= 0.3 && ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        });
+        if (bestId) setActive(bestId);
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: [0, 0.25, 0.5, 1] }
+      { threshold: [0, 0.3, 0.5, 0.75, 1] }
     );
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
 
   const handleNavigate = useCallback((id) => {
+    setActive(id);
     if (id === "home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;

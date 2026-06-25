@@ -105,34 +105,18 @@
 .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
 .font-mono-accent { font-family: 'Azeret Mono', 'SFMono-Regular', monospace; }
 
-/* Custom cursor: hide native cursor on fine-pointer devices */
-@media (pointer: fine) {
-  body.has-cursor-glow, body.has-cursor-glow * {
-    cursor: none;
-  }
-}
-
+/* Custom cursor: keep the default system cursor; only add a glowing aura */
 .cursor-glow {
-  width: 44px;
-  height: 44px;
+  width: 80px;
+  height: 80px;
   border-radius: 9999px;
-  background: rgba(37, 99, 235, 0.18);
-  box-shadow: 0 0 20px 4px rgba(37, 99, 235, 0.30);
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(37, 99, 235, 0.12) 42%, rgba(37, 99, 235, 0) 70%);
+  filter: blur(12px);
+  transition: opacity 0.25s ease, background 0.25s ease;
   will-change: transform;
 }
 .cursor-glow.is-active {
-  width: 60px;
-  height: 60px;
-  background: rgba(37, 99, 235, 0.24);
-  box-shadow: 0 0 28px 8px rgba(37, 99, 235, 0.38);
-}
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 9999px;
-  background: var(--primary-hex);
-  will-change: transform;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.40) 0%, rgba(37, 99, 235, 0.20) 42%, rgba(37, 99, 235, 0) 70%);
 }
 
 /* Typing caret */
