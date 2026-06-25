@@ -44,7 +44,7 @@ export const HeroState = ({ onNavigate }) => {
   alt={PROFILE.name}
   loading="eager"
   className="h-full w-full object-cover"
-  style={{ objectPosition: 'center -5%' }}
+  style={{ objectPosition: 'center' }}
 />
               <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(37,99,235,0.25)]" />
             </motion.div>
