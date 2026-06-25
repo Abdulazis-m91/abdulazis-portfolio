@@ -9,8 +9,8 @@ export const PROFILE = {
   fullTitle: "Full Stack Web Developer & IoT Engineer",
   company: "JQ Tech Solution",
   location: "Lampung, Indonesia",
-  email: "hello@jqtechsolution.com",
-  whatsapp: "6281234567890", // placeholder — international format, no '+'
+  email: "abdulazis.dev1@gmail.com",
+  whatsapp: "6282176849811", // placeholder — international format, no '+'
   photo:
     "https://images.unsplash.com/photo-1649044747879-d77b1dbcecf6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHw0fHxpbmRvbmVzaWFuJTIwZGV2ZWxvcGVyJTIwcG9ydHJhaXQlMjBzdHVkaW8lMjBoZWFkc2hvdHxlbnwwfHx8Ymx1ZXwxNzgyMzYwMzA1fDA&ixlib=rb-4.1.0&q=85&w=600",
   cv: "/cv.pdf",
@@ -22,17 +22,17 @@ export const PROFILE = {
     "& Freelancer",
   ],
   stats: [
-    { label: "Years Exp", value: 2, suffix: "+" },
-    { label: "Projects", value: 5, suffix: "+" },
+    { label: "Years Exp", value: 3, suffix: "+" },
+    { label: "Projects", value: 8, suffix: "+" },
     { label: "Full Stack Dev", value: null, text: "Full Stack Dev" },
   ],
 };
 
 export const SOCIALS = [
-  { name: "GitHub", icon: "github", url: "https://github.com" },
-  { name: "LinkedIn", icon: "linkedin", url: "https://linkedin.com" },
-  { name: "Instagram", icon: "instagram", url: "https://instagram.com" },
-  { name: "Portfolio", icon: "globe", url: "#home" },
+  { name: "GitHub", icon: "github", url: "https://github.com/Abdulazis-m91" },
+  { name: "LinkedIn", icon: "linkedin", url: "www.linkedin.com/in/abdulazis-f91" },
+  { name: "Instagram", icon: "instagram", url: "https://www.instagram.com/jqueryaziz" },
+  { name: "Portfolio", icon: "globe", url: "https://abdulazis.my.id" },
 ];
 
 export const NAV_ITEMS = [
@@ -220,16 +220,16 @@ export const TECH_GROUPS = [
 export const EDUCATION = [
   {
     type: "degree",
-    title: "S1 Informatika / Ilmu Komputer",
-    org: "[University Name]",
-    year: "2019",
-    desc: "Bachelor's degree in Informatics / Computer Science with a focus on software engineering and information systems.",
+    title: "S1 Teknik Informatika",
+    org: "Universitas Teknologi Yogyakarta (UTY)",
+    year: "2014 - 2019",
+    desc: "Bachelor's degree in Informatics Engineering with focus on software development and information systems.",
   },
   {
-    type: "self",
-    title: "Self-Taught Engineering",
-    org: "Continuous Learning",
-    year: "Ongoing",
-    desc: "React, TypeScript, IoT, Laravel, and Supabase — learned through hands-on projects and real client work.",
+    type: "highschool",
+    title: "SMK — Teknik Komputer dan Jaringan",
+    org: "Rekayasa Perangkat Lunak (RPL)",
+    year: "2011 - 2014",
+    desc: "Vocational high school majoring in Computer and Network Engineering.",
   },
 ];
