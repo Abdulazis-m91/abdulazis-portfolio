@@ -56,7 +56,28 @@ const ProjectCard = ({ project, index, onOpen }) => {
           {project.client}
           {project.domain ? ` · ${project.domain}` : ""} · {project.year}
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.short}</p>
+        
+        {project.system ? (
+          <div className="mt-3 space-y-3">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-1">📋 System</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{project.system}</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-1">✅ Benefits</p>
+              <ul className="space-y-1">
+                {project.benefits.map((b, i) => (
+                  <li key={i} className="text-sm text-muted-foreground flex gap-2">
+                    <span className="text-green-400 mt-0.5">•</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.short}</p>
+        )}
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {project.tech.map((t) => (
