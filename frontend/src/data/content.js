@@ -223,13 +223,13 @@ export const EDUCATION = [
     title: "S1 Teknik Informatika",
     org: "Universitas Teknologi Yogyakarta (UTY)",
     year: "2014 - 2019",
-    desc: "Bachelor's degree in Informatics Engineering with focus on software development and information systems.",
+    desc: "Bachelor's degree in Informatics Engineering (S.Kom). Focused on Full-Stack Web Development, database management, and web-based system implementation. Undergraduate Thesis: Built a fully functional Online Job Vacancy Website as a case study for Dinas Tenaga Kerja Sleman, Yogyakarta.",
   },
   {
     type: "highschool",
-    title: "SMK — Teknik Komputer dan Jaringan",
-    org: "Rekayasa Perangkat Lunak (RPL)",
+    title: "SMK Negeri 2 Terbanggi Besar",
+    org: "Teknik Komputer dan Jaringan — Lampung, Indonesia",
     year: "2011 - 2014",
-    desc: "Vocational high school majoring in Computer and Network Engineering.",
+    desc: "Vocational High School majoring in Computer & Informatics Engineering. Earned BNSP Competency Certificate: Web Application Development using PHP & MySQL. Final Project: Library Book Borrowing System using student NISN as identification.",
   },
 ];
