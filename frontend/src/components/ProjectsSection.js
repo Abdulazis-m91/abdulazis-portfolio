@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Globe, Play, X } from "lucide-react";
 import { Button } from "./ui/button";
@@ -147,7 +148,7 @@ const contentVariants = {
 };
 
 const ProjectDetailModal = ({ project, open, onClose }) => {
-  // ESC to close + body scroll lock while open
+  // ESC to close + body scroll lock + sidebar blur while open
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => {
@@ -156,13 +157,17 @@ const ProjectDetailModal = ({ project, open, onClose }) => {
     document.addEventListener("keydown", onKey);
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    document.body.classList.add("modal-open");
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+      document.body.classList.remove("modal-open");
     };
   }, [open, onClose]);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <AnimatePresence mode="wait">
       {open && project && (
         <motion.div
@@ -172,7 +177,8 @@ const ProjectDetailModal = ({ project, open, onClose }) => {
           animate="visible"
           exit="exit"
           onClick={onClose}
-          className="fixed inset-0 z-[70] flex items-center justify-center bg-black/80 p-4 backdrop-blur-[8px]"
+          style={{ width: "100vw", height: "100vh" }}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-4 backdrop-blur-[8px]"
           aria-hidden="true"
         >
           <motion.div
@@ -186,14 +192,14 @@ const ProjectDetailModal = ({ project, open, onClose }) => {
             aria-modal="true"
             aria-label={`${project.title} details`}
             data-testid="project-detail-modal"
-            className="relative max-h-[90vh] w-full max-w-[920px] overflow-y-auto rounded-[var(--radius-lg)] border border-[var(--border-hex)] bg-[var(--bg)] shadow-[0_30px_120px_rgba(0,0,0,0.55)]"
+            className="relative z-[10000] mx-auto max-h-[85vh] w-full max-w-[680px] overflow-y-auto rounded-[var(--radius-lg)] border border-[var(--border-hex)] bg-[var(--bg)] shadow-[0_30px_120px_rgba(0,0,0,0.55)]"
           >
             <button
               type="button"
               onClick={onClose}
               data-testid="project-modal-close-button"
               aria-label="Close"
-              className="absolute right-4 top-4 z-10 grid h-9 w-9 place-items-center rounded-lg border border-[var(--border-hex)] bg-[var(--surface)] text-[var(--fg)] transition-colors hover:bg-[rgba(37,99,235,0.10)]"
+              className="absolute right-4 top-4 z-[10001] grid h-9 w-9 place-items-center rounded-lg border border-[var(--border-hex)] bg-[var(--surface)] text-[var(--fg)] transition-colors hover:bg-[rgba(37,99,235,0.10)]"
             >
               <X className="h-4 w-4" />
             </button>
@@ -270,6 +276,7 @@ const ProjectDetailModal = ({ project, open, onClose }) => {
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };

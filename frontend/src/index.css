@@ -143,6 +143,13 @@
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* When a modal is open, blur the side/bottom navigation behind it */
+body.modal-open [data-testid="sidebar-nav"],
+body.modal-open [data-testid="bottom-nav"] {
+  filter: blur(4px);
+  transition: filter 0.25s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .type-caret { animation: none; }
