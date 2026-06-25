@@ -45,23 +45,30 @@ export const NAV_ITEMS = [
 ];
 
 export const PROJECTS = [
-  {
+{
     id: "smartpresence",
     title: "SmartPresence — RFID Attendance System",
     client: "Yayasan Baitulloh",
     domain: "yayasanbaitulloh.com",
     year: "2024",
+    system:
+      "An RFID-based attendance system connecting ESP32 hardware with a real-time web dashboard for automated student and teacher attendance monitoring.",
+    benefits: [
+      "Paperless attendance — students simply tap their RFID card",
+      "Automated daily & monthly recap reports",
+      "Real-time monitoring for 300+ students & 30+ teachers",
+    ],
     short:
       "RFID-based attendance system pairing ESP32 hardware with a real-time web dashboard for staff and student check-ins.",
     description:
       "SmartPresence is an end-to-end attendance platform built for Yayasan Baitulloh. ESP32 microcontrollers read RFID cards (RC522) and stream taps to a PHP/MySQL backend, while a React + TypeScript dashboard provides live attendance monitoring, recap reports, and automated notifications. Designed for reliability in low-connectivity environments with offline buffering and instant sync once online.",
     tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID"],
     images: [
-    "/images/rfid-software.webp",
-    "/images/tester.webp",
-    "/images/smartpresence-1.webp",
-    "/images/tampilan.webp"
-  ],
+      "/images/rfid-software.webp",
+      "/images/tester.webp",
+      "/images/smartpresence-1.webp",
+      "/images/tampilan.webp",
+    ],
     demo: "#",
     live: "https://yayasanbaitulloh.com",
   },
