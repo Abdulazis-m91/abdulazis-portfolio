@@ -160,6 +160,16 @@ body.modal-open [data-testid="bottom-nav"] {
   [data-debug-wrapper="true"] { display: contents !important; }
 }
 
-#emergent-badge {
+#emergent-badge,
+a#emergent-badge,
+[id="emergent-badge"] {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
 }
