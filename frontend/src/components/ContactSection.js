@@ -1,4 +1,4 @@
-import { Mail, MessageCircle, Linkedin, Instagram, Send, Loader2 } from "lucide-react";
+import { Mail, MessageCircle, ExternalLink, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -90,14 +90,14 @@ const infoItems = [
       testId: "contact-whatsapp-link",
     },
     {
-      icon: Linkedin,
+      icon: ExternalLink,
       label: "LinkedIn",
       value: "abdulazis-f91",
       href: "https://www.linkedin.com/in/abdulazis-f91",
       testId: "contact-linkedin-link",
     },
     {
-      icon: Instagram,
+      icon: ExternalLink,
       label: "Instagram",
       value: "@jqueryaziz",
       href: "https://www.instagram.com/jqueryaziz",
