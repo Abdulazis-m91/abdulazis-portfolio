@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Globe, Eye, Play, X } from "lucide-react";
+import { ExternalLink, Globe, Play } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -48,9 +48,16 @@ const ProjectCard = ({ project, index, onOpen }) => {
       </div>
 
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-lg font-semibold leading-snug text-[var(--fg)]">
-          {project.title}
-        </h3>
+        <button
+          type="button"
+          onClick={() => onOpen(project)}
+          data-testid="project-card-title-button"
+          className="cursor-pointer text-left"
+        >
+          <h3 className="font-display text-lg font-semibold leading-snug text-[var(--fg)] underline-offset-4 transition-colors hover:text-[var(--primary-hex)] hover:underline">
+            {project.title}
+          </h3>
+        </button>
         <p className="font-mono-accent mt-1 text-xs text-[var(--primary-hex)]">
           {project.client}
           {project.domain ? ` · ${project.domain}` : ""} · {project.year}
@@ -95,14 +102,6 @@ const ProjectCard = ({ project, index, onOpen }) => {
             ) : (
               <span><Globe className="mr-1.5 inline h-3.5 w-3.5" /> Live Website</span>
             )}
-          </Button>
-          <Button
-            size="sm"
-            data-testid="project-card-detail-button"
-            onClick={() => onOpen(project)}
-            className="h-9 rounded-lg bg-[var(--primary-hex)] px-3 text-xs text-white hover:bg-[#1D4ED8]"
-          >
-            <Eye className="mr-1.5 h-3.5 w-3.5" /> Detail
           </Button>
         </div>
       </div>

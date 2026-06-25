@@ -16,17 +16,17 @@ export const SidebarNav = ({ active, onNavigate }) => {
       {/* Identity */}
       <button
         onClick={() => onNavigate("home")}
-        className="flex items-center gap-3 rounded-xl p-1 text-left"
+        className="flex w-full flex-col items-center gap-2 rounded-xl p-1 text-center"
         data-testid="sidebar-identity"
       >
-        <span className="h-12 w-12 overflow-hidden rounded-full ring-2 ring-[rgba(37,99,235,0.55)]">
+        <span className="h-20 w-20 overflow-hidden rounded-full ring-2 ring-[rgba(37,99,235,0.55)] shadow-[0_0_0_1px_rgba(37,99,235,0.25),0_10px_30px_rgba(37,99,235,0.25)]">
           <img src={PROFILE.photo} alt={PROFILE.name} className="h-full w-full object-cover" />
         </span>
-        <span>
-          <span className="font-display block text-sm font-semibold text-[var(--fg)]">
+        <span className="mt-1">
+          <span className="font-display block text-base font-semibold text-[var(--fg)]">
             {PROFILE.name}
           </span>
-          <span className="block text-xs text-muted-foreground">{PROFILE.title}</span>
+          <span className="mt-0.5 block text-xs text-muted-foreground">{PROFILE.title}</span>
         </span>
       </button>
 

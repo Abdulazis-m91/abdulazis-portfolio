@@ -7,7 +7,6 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { HeroState } from "@/components/HeroState";
 import { SidebarNav } from "@/components/SidebarNav";
 import { BottomNav } from "@/components/BottomNav";
-import { TopHeader } from "@/components/TopHeader";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { TechStackGrid } from "@/components/TechStackGrid";
@@ -87,22 +86,15 @@ function App() {
       {/* Noise overlay for depth */}
       <div className="noise-overlay pointer-events-none fixed inset-0 z-0 opacity-[0.04] mix-blend-overlay" />
 
-      {/* Hero-state floating theme toggle (top-right) */}
-      <AnimatePresence>
-        {!scrolled && (
-          <div className="fixed right-4 top-4 z-50 sm:right-6 sm:top-6">
-            <ThemeToggle theme={theme} onToggle={toggle} />
-          </div>
-        )}
-      </AnimatePresence>
+      {/* Floating theme toggle (top-right, always visible) */}
+      <div className="fixed right-4 top-4 z-50 sm:right-6 sm:top-6">
+        <ThemeToggle theme={theme} onToggle={toggle} />
+      </div>
 
-      {/* After-scroll chrome */}
+      {/* After-scroll sidebar */}
       <AnimatePresence>
         {scrolled && (
-          <>
-            <SidebarNav key="sidebar" active={active} onNavigate={handleNavigate} />
-            <TopHeader key="header" theme={theme} onToggleTheme={toggle} />
-          </>
+          <SidebarNav key="sidebar" active={active} onNavigate={handleNavigate} />
         )}
       </AnimatePresence>
 
@@ -117,7 +109,7 @@ function App() {
 
         {/* Content sections */}
         <main className="relative pb-[calc(var(--bottom-nav-h)+24px)] lg:pb-0 lg:pl-[var(--sidebar-w)]">
-          <div className="lg:pt-[var(--header-h)]">
+          <div>
             <ProjectsSection />
             <ExperienceTimeline />
             <TechStackGrid />
