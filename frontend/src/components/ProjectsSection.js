@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "./ui/dialog";
 import { Button } from "./ui/button";
 import { SectionShell } from "./SectionShell";
@@ -141,6 +142,9 @@ export const ProjectsSection = () => {
                   {selected.client}
                   {selected.domain ? ` · ${selected.domain}` : ""} · {selected.year}
                 </p>
+                <DialogDescription className="sr-only">
+                  Project details for {selected.title} by {selected.client}
+                </DialogDescription>
               </DialogHeader>
 
               <div className="p-6">

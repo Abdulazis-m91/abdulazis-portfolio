@@ -1,91 +1,102 @@
 # plan.md
 
 ## 1. Objectives
-- Deliver a polished, responsive portfolio for **Abdul Azis** matching the specified 2-state layout, color schemes, and special effects.
-- Implement Framer Motion-driven interactions (hero→sidebar transition, section reveals, timeline draw, modal project details, hover glows).
-- Provide a contact flow that **opens WhatsApp/mailto with prefilled message** and **also persists submissions** to FastAPI + MongoDB.
-- Use placeholder assets (profile, screenshots, social links, CV PDF) that are easy to swap later.
-- Ensure performance, accessibility basics (keyboard, focus, reduced motion), and smooth scroll behavior.
+- Deliver a polished, responsive portfolio for **Abdul Azis** matching the specified 2-state layout, fixed color schemes, and special effects.
+- Implement Framer Motion-driven interactions (hero→sidebar transition, section reveals, timeline draw, project detail modal, hover glows).
+- Provide a contact flow that **opens WhatsApp/mailto with a prefilled message** and **also persists submissions** to FastAPI + MongoDB.
+- Use placeholder assets (profile photo, project screenshots, social links, CV PDF) that are easy to swap later.
+- Ensure performance + accessibility basics (keyboard focus, reduced motion, lazy images) and smooth scroll behavior.
+
+**Current status:** Phase 2 is complete and verified (full build shipped + backend persistence + 100% E2E test pass). Remaining work is optional refinement and enhancements only if requested.
 
 ## 2. Implementation Steps
 
-### Phase 1: Core Flow POC (skip heavy POC; validate core flows quickly)
-Core workflow = **Contact submit → prefilled WhatsApp/mailto + backend persistence** (only part with cross-system data flow).
-- User stories:
-  1. As a visitor, I can submit the contact form and immediately be taken to WhatsApp with my message prefilled.
-  2. As a visitor, I can choose email as a fallback and open my mail client with subject/body prefilled.
-  3. As the site owner, I can confirm the message is saved server-side even if WhatsApp/email is used.
-  4. As a visitor, I see clear validation errors when fields are missing/invalid.
-  5. As a visitor, I see a success state and can submit again without refreshing.
-- Backend (FastAPI): add `/api/contact` POST that validates payload and writes to MongoDB.
-- Frontend: minimal Contact form page that:
-  - validates fields
-  - POSTs to `/api/contact`
-  - on success, triggers `window.open(wa.me...)` and/or `mailto:` link
-- Quick verification: run locally, submit once, confirm MongoDB record exists, confirm WhatsApp/mailto opens correctly.
+### Phase 1: Core Flow POC (skip heavy POC; validate core flows quickly) ✅ Completed
+Core workflow = **Contact submit → prefilled WhatsApp/mailto + backend persistence**.
+- User stories (validated):
+  1. Visitor can submit contact form and be taken to WhatsApp with message prefilled.
+  2. Visitor can use email fallback with prefilled subject/body.
+  3. Owner can confirm message is saved server-side.
+  4. Visitor sees validation errors for missing/invalid fields.
+  5. Visitor sees success feedback and can submit again.
+- Backend (FastAPI): Implemented `/api/contact` (POST) validation + MongoDB persistence.
+- Frontend: Implemented contact form validation + POST + WhatsApp/mailto prefill.
+- Verification: Confirmed persisted messages via `/api/contact` (GET) and manual submission.
 
-### Phase 2: V1 App Development (frontend + minimal backend)
-- User stories:
-  1. As a visitor, I land on a full-screen hero with typing animation and clear CTAs.
-  2. As a visitor, when I scroll, the sidebar layout appears and navigation highlights sections.
-  3. As a visitor, I can browse projects and open a modal with screenshots, details, and links.
-  4. As a visitor, I can view experience as an animated timeline that draws on scroll.
-  5. As a mobile user, I can navigate using a bottom nav and all sections remain readable.
-- Frontend structure (React + Tailwind + Framer Motion):
-  - App shell with theme provider (dark/light) and smooth scroll.
-  - Custom cursor blue orb (lerp) with reduced-motion fallback.
-  - Hero (State 1) with badges, typing animation, buttons, social icons, scroll indicator.
-  - Scroll detection to switch into State 2:
-    - Fixed left sidebar with avatar, name/title, icon nav, CV button, social icons.
-    - Thin top header text “ABDUL AZIS”.
-  - Sections: Projects, Experience, Tech Stack, Education, Contact.
-  - Projects: cards with placeholders, tags, CTA buttons; Detail opens modal (2x2 image grid).
-  - Experience: vertical timeline with animated line drawing.
-  - Tech Stack: grouped icon grid with hover glow.
-  - Education: cards with placeholders.
-  - Contact: left info + right form (wired to Phase 1 endpoints).
-- Assets:
-  - Placeholder profile image + project images (static URLs) and placeholder `public/cv.pdf`.
-  - Placeholder social links.
+### Phase 2: V1 App Development (frontend + minimal backend) ✅ Completed
+- Delivered features (verified working):
+  1. Full-screen Hero (State 1) with:
+     - Circular photo with blue glow border
+     - Floating badges (2+ Years Exp, 5+ Projects, Full Stack Dev)
+     - “Available for work” badge
+     - Typing animation (3 phrases)
+     - CTAs: My Portfolio + Download CV
+     - Social icon row
+     - Scroll indicator
+  2. After-scroll layout (State 2) with:
+     - Fixed left sidebar (mini avatar, name/title, icon nav, Download CV button, social icons)
+     - Thin top header displaying “ABDUL AZIS” + theme toggle
+     - Mobile: bottom navigation bar
+  3. Sections implemented:
+     - Projects grid (4 projects) with project cards + tags + CTA buttons
+     - Project Detail modal (4 screenshots in 2×2 grid, description, tags, Live Demo/Go to Website)
+     - Experience timeline with scroll-draw animated line
+     - Tech stack grouped icon grid (devicon logos + lucide fallbacks)
+     - Education cards
+     - Contact section (info + form)
+  4. Visual/interaction polish:
+     - Custom blue cursor glow orb with smooth lerp (disabled on touch devices and reduced motion)
+     - Dark/light theme toggle with animated sun/moon and persistence
+     - Noise overlay for depth (no heavy gradients)
+     - Smooth scroll and scrollspy highlighting active section
+     - Reduced-motion support
 - Backend:
-  - Keep `/api/contact` from Phase 1.
-  - Optional: `/api/contact/recent` for quick verification in dev.
-- Conclude Phase 2 with 1 round E2E testing (navigation, state switch, modals, contact submission, mobile layout).
+  - `/api/contact` POST + GET implemented (GET used as dev verification helper)
+- Assets:
+  - Placeholder profile image, placeholder project images, placeholder social links, placeholder CV PDF created at `/public/cv.pdf`
+- Testing:
+  - E2E testing agent run: **100% pass** (backend 5/5 + all frontend features)
+  - Minor a11y console warning fixed by adding `DialogDescription` in the project modal.
 
-### Phase 3: Refinement + Production Polish
-- User stories:
-  1. As a visitor, animations feel smooth and not distracting, and respect reduced-motion.
-  2. As a visitor, the site loads fast with images lazy-loaded.
-  3. As a visitor, I can use keyboard to navigate sidebar and close modals.
-  4. As the owner, I can update projects/social links/CV without touching many files.
-  5. As a visitor, dark/light mode persists across reloads.
-- Improve accessibility: focus traps in modal, ESC close, aria labels.
-- Performance: lazy loading, code splitting for modal, optimize Framer Motion usage.
-- Data model: centralize content in a `content.ts` (projects/experience/skills).
-- Visual QA: ensure exact colors, glow effects, hover states, responsive breakpoints.
-- Conclude Phase 3 with 1 round E2E testing (desktop + mobile + reduced motion).
+### Phase 3: Refinement + Production Polish (optional / only if requested)
+- User stories (future):
+  1. Animations feel smooth and restrained; respect reduced-motion.
+  2. Site loads faster via additional performance optimizations.
+  3. Keyboard navigation improvements (extra aria-label coverage, focus order checks).
+  4. Owner can update content and assets easily (swap placeholders with real photo/screenshots/CV/links).
+  5. Final visual QA across breakpoints.
+- Proposed refinements (if requested):
+  - Add a simple “asset swap checklist” + ensure all content is editable via `src/data/content.js`.
+  - Tighten contrast checks and add more explicit aria labels on key icon-only controls.
+  - Optional code splitting for heavy sections/modals.
 
 ### Phase 4: Optional Enhancements (only after approval)
-- User stories:
-  1. As the owner, I can view saved contact messages in a simple admin page.
-  2. As a visitor, I can filter projects by tech tags.
-  3. As a visitor, I can switch language (ID/EN).
-  4. As a visitor, I can copy email/WhatsApp quickly.
-  5. As the owner, I can swap placeholders with real assets via a documented checklist.
-- Add minimal admin viewer (no auth) or add auth if requested (with user approval).
+- User stories (future):
+  1. Owner can view saved contact messages in a simple admin page.
+  2. Visitors can filter projects by tech tags.
+  3. Visitors can switch language (ID/EN).
+  4. Visitors can copy email/WhatsApp quickly.
+  5. Replace placeholders with real assets and real social links.
+- Possible deliverables:
+  - Minimal admin viewer (optionally protected)
+  - Project filtering UI
+  - i18n toggle
+  - Copy-to-clipboard utilities
 
 ## 3. Next Actions
-- Implement Phase 1 core flow (FastAPI `/api/contact` + minimal contact form + WhatsApp/mailto prefill + Mongo persistence).
-- Build Phase 2 UI skeleton and section components; wire navigation and state transition.
-- Add animations + custom cursor + theme toggle; integrate project modal.
-- Run E2E test pass and fix issues.
+- ✅ No further required development for V1 (already complete and tested).
+- If you want to proceed beyond V1, choose next steps:
+  1. Replace placeholders with real assets (photo, screenshots, CV PDF) + real social links.
+  2. Approve/implement optional Phase 3 refinements.
+  3. Approve/implement Phase 4 enhancements (admin viewer, filters, i18n, etc.).
 
 ## 4. Success Criteria
-- Visual parity with specified design: 2-state layout, colors, cursor glow, dark/light mode, Framer Motion animations.
-- Projects section includes cards + working modal with correct content and placeholder images.
-- Contact form reliably:
+- ✅ Visual parity with specified design: 2-state layout, fixed palette, cursor glow, dark/light mode, Framer Motion animations.
+- ✅ Projects section includes cards + working modal with correct content and placeholder images.
+- ✅ Contact form reliably:
   - validates inputs
-  - persists to MongoDB
+  - persists to MongoDB via FastAPI
   - opens WhatsApp/mailto with correct prefilled text
-- Fully responsive: sidebar → bottom nav on mobile; no broken layouts.
-- Performance/accessibility: smooth interactions, reduced-motion support, keyboard-usable modal/nav.
+- ✅ Fully responsive: sidebar → bottom nav on mobile; no broken layouts.
+- ✅ Performance/accessibility baseline: smooth interactions, reduced-motion support, keyboard-usable modal/nav.
+- ✅ E2E testing: 100% pass; minor a11y warning fixed.
