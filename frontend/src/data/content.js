@@ -14,7 +14,7 @@ export const PROFILE = {
   photo: "/foto-profil.webp",
   cv: "/cv.pdf",
   description:
-    "I'm a Full Stack Developer specializing in building scalable web applications using React, TypeScript, Node.js, PHP, Laravel, and MySQL — with hands-on experience delivering real-world solutions for institutional clients across Indonesia.",
+    "I'm a Full Stack Developer specializing in building scalable web applications using React, TypeScript, Node.js, PHP, Laravel, and MySQL - with hands-on experience delivering real-world solutions for institutional clients across Indonesia.",
   typingPhrases: [
     "I'm a Full Stack Web Developer.",
     "& IoT Engineer",
@@ -126,37 +126,35 @@ export const PROJECTS = [
   },
 ];
 
+
 export const EXPERIENCE = [
   {
-    period: "2024 — Present",
-    role: "Freelance Full Stack Developer",
-    org: "JQ Tech Solution, Lampung",
-    desc: "Founder & lead developer delivering web applications and IoT systems for institutional clients across Indonesia.",
+    period: "Jan 2024 — Present",
+    role: "Full-Stack Web Developer",
+    org: "Self-Employed — Lampung, Indonesia",
+    desc: "Engineered 3+ custom web applications for clients across education and business sectors. Delivered a Finance Management System (500+ users), SmartCard RFID Attendance System (300+ students), and POS/Cashier System for SMEs. Integrated AI features using OpenAI and Claude API.",
     current: true,
   },
-  {
-    period: "2024",
-    role: "SmartPresence RFID System",
-    org: "Yayasan Baitulloh",
-    desc: "Designed and built an RFID attendance platform integrating ESP32 hardware with a real-time web dashboard.",
+{
+    period: "Jan 2024 — Jan 2026",
+    role: "Multimedia & Digital Technology Instructor",
+    org: "BLK Komunitas Rowdotul Alimir Robbaniy — Kemnaker RI",
+    desc: "Teaching Multimedia and Digital Technology under Indonesia's Ministry of Manpower. Delivering hands-on training in web development and digital tools to students per batch.",
+    current: false,
   },
   {
-    period: "2024",
-    role: "Finance Management System",
-    org: "Yayasan Baitulloh",
-    desc: "Developed a financial management platform with WhatsApp-based automated reporting on React + Supabase.",
+    period: "Aug 2022 — Apr 2024",
+    role: "IT Support Specialist & Web Developer",
+    org: "Yayasan Baitulloh — Lampung, Indonesia",
+    desc: "Oversaw IT infrastructure and developed web solutions for a nonprofit Islamic school with 60+ members. Managed 500+ student/teacher records with 99% data accuracy. Resolved 50+ IT support tickets monthly.",
+    current: false,
   },
   {
-    period: "2024",
-    role: "FKKI Digital Platform",
-    org: "Forum Komunikasi Kesehatan Islam",
-    desc: "Built a digital community platform with content publishing and member management for an Islamic health forum.",
-  },
-  {
-    period: "2019",
-    role: "Situs Lowongan Kerja Online",
-    org: "Thesis Project",
-    desc: "Created an online job-vacancy portal with PHP Native, MySQL, and Bootstrap as the final undergraduate thesis.",
+    period: "Apr 2018 — Sep 2019",
+    role: "Web Developer Intern",
+    org: "Dinas Tenaga Kerja Sleman — Yogyakarta, Indonesia",
+    desc: "Built a full-featured Online Job Vacancy Website as undergraduate thesis, connecting job seekers with 30+ employers in Sleman region. Supported digital recruitment services for 100+ job seekers.",
+    current: false,
   },
 ];
 
