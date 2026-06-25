@@ -9,6 +9,8 @@ export const PROFILE = {
   fullTitle: "Full Stack Web Developer & IoT Engineer",
   location: "Lampung, Indonesia",
   email: "abdulazis.dev1@gmail.com",
+  linkedin: "https://www.linkedin.com/in/abdulazis-f91",
+  instagram: "https://www.instagram.com/jqueryaziz",
   whatsapp: "6282176849811", // placeholder — international format, no '+'
   photo: "/foto-profil.webp",
   cv: "/cv.pdf",

@@ -1,3 +1,4 @@
+import { Mail, MessageCircle, Linkedin, Instagram, Send, Loader2 } from "lucide-react";
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
@@ -73,7 +74,7 @@ export const ContactSection = () => {
     window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
   };
 
-  const infoItems = [
+const infoItems = [
     {
       icon: Mail,
       label: "Email",
@@ -89,11 +90,18 @@ export const ContactSection = () => {
       testId: "contact-whatsapp-link",
     },
     {
-      icon: MapPin,
-      label: "Location",
-      value: PROFILE.location,
-      href: null,
-      testId: "contact-location",
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "abdulazis-f91",
+      href: "https://www.linkedin.com/in/abdulazis-f91",
+      testId: "contact-linkedin-link",
+    },
+    {
+      icon: Instagram,
+      label: "Instagram",
+      value: "@jqueryaziz",
+      href: "https://www.instagram.com/jqueryaziz",
+      testId: "contact-instagram-link",
     },
   ];
 
