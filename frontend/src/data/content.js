@@ -17,7 +17,7 @@ export const PROFILE = {
     "I'm a Full Stack Developer specializing in building scalable web applications using React, TypeScript, Node.js, PHP, Laravel, and MySQL - with hands-on experience delivering real-world solutions for institutional clients across Indonesia.",
   typingPhrases: [
     "I'm a Full Stack Web Developer.",
-    "& IoT Engineer",
+    "& IoT Engineer",    
     "& Freelancer",
   ],
   stats: [
