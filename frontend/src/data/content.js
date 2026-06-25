@@ -58,9 +58,9 @@ export const PROJECTS = [
     tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID"],
     images: [
     "/images/rfid-software.webp",
+    "/images/tester.webp",
     "/images/smartpresence-1.webp",
-    "/images/tampilan.webp",
-    "/images/tester.webp"
+    "/images/tampilan.webp"
   ],
     demo: "#",
     live: "https://yayasanbaitulloh.com",
