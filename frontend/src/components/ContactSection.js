@@ -104,7 +104,7 @@ const infoItems = [
       testId: "contact-instagram-link",
     },
   ];
-
+  
   return (
     <SectionShell id="contact" testId="contact-section" eyebrow="Get in touch" title="Let's Work Together 🚀">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
