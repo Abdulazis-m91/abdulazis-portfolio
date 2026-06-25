@@ -70,7 +70,7 @@ export const ContactSection = () => {
     const subject = encodeURIComponent(`Project inquiry from ${form.name || "website"}`);
     const body = encodeURIComponent(
       `Hi Abdul,\n\n${form.message}\n\n- ${form.name} (${form.email})`
-    );
+    );    
     window.location.href = `mailto:${PROFILE.email}?subject=${subject}&body=${body}`;
   };
 
