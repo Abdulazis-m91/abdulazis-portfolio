@@ -39,13 +39,12 @@ export const HeroState = ({ onNavigate }) => {
               style={{ scale: photoScale }}
               className="relative h-56 w-56 overflow-hidden rounded-full ring-2 ring-[rgba(37,99,235,0.55)] shadow-[0_0_0_1px_rgba(37,99,235,0.25),0_18px_60px_rgba(37,99,235,0.30)] sm:h-64 sm:w-64 lg:h-80 lg:w-80"
             >
-             <img
-  src={PROFILE.photo}
-  alt={PROFILE.name}
-  loading="eager"
-  className="h-full w-full object-cover"
-  style={{ objectPosition: 'center -0.1%' }}
-/>
+              <img
+                src={PROFILE.photo}
+                alt={PROFILE.name}
+                loading="eager"
+                className="h-full w-full object-cover"
+              />
               <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(37,99,235,0.25)]" />
             </motion.div>
             {/* decorative glow ring */}
