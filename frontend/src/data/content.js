@@ -93,10 +93,10 @@ export const PROJECTS = [
       "A complete financial management system for Yayasan Baitulloh built on React, Supabase, and Tailwind CSS, deployed on Vercel. It handles multi-account bookkeeping, categorized transactions, monthly recaps, and role-based access. Integrated WhatsApp API delivers automated financial summaries and payment reminders directly to stakeholders.",
     tech: ["React", "Supabase", "Tailwind", "Vercel", "WhatsApp API"],
     images: [
-      "/images/fainens 2.webp",
+      "/images/fainens 1.webp",
       "/images/fainens 4.webp",
       "/images/fainens 3.webp",
-      "/images/fainens 1.webp",
+      "/images/fainens 2.webp",
     ],
     demo: "#",
     live: "https://baitulloh.com",
