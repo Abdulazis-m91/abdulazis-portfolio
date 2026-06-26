@@ -38,6 +38,16 @@ function useTheme() {
 
 function App() {
   const { theme, toggle } = useTheme();
+
+  // Disable right click on images
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.target.tagName === 'IMG') e.preventDefault();
+    };
+    document.addEventListener('contextmenu', handler);
+    return () => document.removeEventListener('contextmenu', handler);
+  }, []);
+
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
 

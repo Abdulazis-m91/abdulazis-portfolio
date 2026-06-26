@@ -3,3 +3,8 @@
   background-color: var(--bg);
   color: var(--fg);
 }
+
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
