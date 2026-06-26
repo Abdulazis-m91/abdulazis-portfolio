@@ -79,7 +79,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.short}</p>
         )}
 
-        <div className="mt-4 flex flex-wrap gap-1.5">
+        <div className="mt-auto pt-4 flex flex-wrap gap-1.5">
           {project.tech.map((t) => (
             <TechTag key={t}>{t}</TechTag>
           ))}
