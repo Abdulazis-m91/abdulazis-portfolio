@@ -64,7 +64,7 @@ export const SidebarNav = ({ active, onNavigate }) => {
           data-testid="sidebar-download-cv-button"
           className="flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-[var(--primary-hex)] text-sm font-medium text-white shadow-[0_10px_30px_rgba(37,99,235,0.25)] transition-transform hover:-translate-y-0.5 hover:bg-[#1D4ED8]"
         >
-          <Download className="h-4 w-4" /> Download CV
+          <Download className="h-4 w-4" /> Download RESUME
         </a>
         <div className="flex items-center justify-center gap-2">
           {SOCIALS.map((s) => {
