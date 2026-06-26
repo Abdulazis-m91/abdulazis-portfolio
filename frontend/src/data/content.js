@@ -57,13 +57,13 @@ export const PROJECTS = [
       "Paperless attendance - students simply tap their RFID card",
       "Automated daily & monthly recap reports",
       "Real-time monitoring for 300+ students & 30+ teachers",
-      "Eliminates manual data entry errors with automated RFID logging",
+      "Automated WhatsApp notifications to parents for real-time attendance updates",
     ],
     short:
       "RFID-based attendance system pairing ESP32 hardware with a real-time web dashboard for staff and student check-ins.",
     description:
       "SmartPresence is an end-to-end attendance platform built for Yayasan Baitulloh. ESP32 microcontrollers read RFID cards (RC522) and stream taps to a PHP/MySQL backend, while a React + TypeScript dashboard provides live attendance monitoring, recap reports, and automated notifications. Designed for reliability in low-connectivity environments with offline buffering and instant sync once online.",
-    tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID"],
+    tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID", "WhatsApp API", "Email SMTP"],
     images: [
       "/images/rfid-software.webp",
       "/images/tester.webp",
