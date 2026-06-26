@@ -47,14 +47,14 @@ export const NAV_ITEMS = [
 export const PROJECTS = [
 {
     id: "smartpresence",
-    title: "SmartPresence — RFID Attendance System",
+    title: "SmartPresence - RFID Attendance System",
     client: "Yayasan Baitulloh",
     domain: "yayasanbaitulloh.com",
-    year: "2024",
+    year: "2026",
     system:
       "An RFID-based attendance system connecting ESP32 hardware with a real-time web dashboard for automated student and teacher attendance monitoring.",
     benefits: [
-      "Paperless attendance — students simply tap their RFID card",
+      "Paperless attendance - students simply tap their RFID card",
       "Automated daily & monthly recap reports",
       "Real-time monitoring for 300+ students & 30+ teachers",
     ],
@@ -72,12 +72,20 @@ export const PROJECTS = [
     demo: "#",
     live: "https://yayasanbaitulloh.com",
   },
-  {
+ {
     id: "baitulloh-finance",
     title: "Baitulloh Finance Management System",
     client: "Yayasan Baitulloh",
     domain: "baitulloh.com",
-    year: "2024",
+    year: "2025",
+    system:
+      "A web-based finance management system handling income, expenses, and automated financial reporting for school and pesantren operations at Yayasan Baitulloh.",
+    benefits: [
+      "Reduced manual reporting time by 70%",
+      "Multi-role access for school and pesantren staff",
+      "Automated WhatsApp payment reminders to parents",
+      "Real-time financial recap by month and category",
+    ],
     short:
       "A finance management platform for tracking institutional income, expenses, and automated WhatsApp reporting.",
     description:
