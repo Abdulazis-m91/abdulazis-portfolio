@@ -106,7 +106,7 @@ export const PROJECTS = [
     title: "FKKI — Islamic Health Forum",
     client: "Forum Komunikasi Kesehatan Islam",
     domain: "fkki.org",
-    year: "2024",
+    year: "2025",
     system:
       "A digital platform for Forum Komunikasi Kesehatan Islam to manage and organize healthcare professionals (nurses, doctors, specialists) across multiple provinces in Indonesia.",
     benefits: [
