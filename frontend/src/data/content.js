@@ -57,6 +57,7 @@ export const PROJECTS = [
       "Paperless attendance - students simply tap their RFID card",
       "Automated daily & monthly recap reports",
       "Real-time monitoring for 300+ students & 30+ teachers",
+      "Eliminates manual data entry errors with automated RFID logging",
     ],
     short:
       "RFID-based attendance system pairing ESP32 hardware with a real-time web dashboard for staff and student check-ins.",
