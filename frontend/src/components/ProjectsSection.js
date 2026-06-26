@@ -85,7 +85,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
           ))}
         </div>
 
-        <div className="mt-auto pt-5 flex flex-wrap gap-2">
+       <div className="mt-5 flex flex-wrap gap-2">
           <Button
             asChild={!!project.demo && project.demo !== "#"}
             variant="ghost"
