@@ -101,12 +101,20 @@ export const PROJECTS = [
     demo: "#",
     live: "https://baitulloh.com",
   },
-  {
+{
     id: "fkki",
     title: "FKKI — Islamic Health Forum",
     client: "Forum Komunikasi Kesehatan Islam",
     domain: "fkki.org",
     year: "2024",
+    system:
+      "A digital platform for Forum Komunikasi Kesehatan Islam to manage and organize healthcare professionals (nurses, doctors, specialists) across multiple provinces in Indonesia.",
+    benefits: [
+      "Centralized database of healthcare workers from nurses to specialist doctors across provinces",
+      "Enables organizations to filter and sort healthcare workers by region and specialty",
+      "Quickly locate available medical personnel in emergency situations by district or regency",
+      "Streamlines member registration and role-based access for health organization management",
+    ],
     short:
       "A digital platform and forum for an Islamic health community — articles, member management, and discussions.",
     description:
