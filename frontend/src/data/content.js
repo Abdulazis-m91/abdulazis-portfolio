@@ -121,12 +121,20 @@ export const PROJECTS = [
     demo: "#",
     live: "https://fkki.org",
   },
-  {
+{
     id: "lowongan-kerja",
     title: "Situs Lowongan Kerja Online",
     client: "Thesis Project",
     domain: null,
     year: "2019",
+    system:
+      "A web-based job vacancy portal connecting job seekers with employers, built as an undergraduate thesis project for Dinas Tenaga Kerja Sleman, Yogyakarta.",
+    benefits: [
+      "Connected job seekers with 30+ employers in Sleman region",
+      "Supported digital recruitment for 100+ job seekers",
+      "Employers can post vacancies and manage applicants online",
+      "Job seekers can register, build profiles, and apply directly",
+    ],
     short:
       "An online job-vacancy portal connecting job seekers and employers — the final thesis project.",
     description:
