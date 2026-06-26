@@ -63,7 +63,7 @@ export const PROJECTS = [
       "RFID-based attendance system pairing ESP32 hardware with a real-time web dashboard for staff and student check-ins.",
     description:
       "SmartPresence is an end-to-end attendance platform built for Yayasan Baitulloh. ESP32 microcontrollers read RFID cards (RC522) and stream taps to a PHP/MySQL backend, while a React + TypeScript dashboard provides live attendance monitoring, recap reports, and automated notifications. Designed for reliability in low-connectivity environments with offline buffering and instant sync once online.",
-    tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID", "WhatsApp API", "Email SMTP"],
+    tech: ["React", "TypeScript", "PHP", "MySQL", "ESP32", "RFID"],
     images: [
       "/images/rfid-software.webp",
       "/images/tester.webp",
@@ -93,10 +93,10 @@ export const PROJECTS = [
       "A complete financial management system for Yayasan Baitulloh built on React, Supabase, and Tailwind CSS, deployed on Vercel. It handles multi-account bookkeeping, categorized transactions, monthly recaps, and role-based access. Integrated WhatsApp API delivers automated financial summaries and payment reminders directly to stakeholders.",
     tech: ["React", "Supabase", "Tailwind", "Vercel", "WhatsApp API"],
     images: [
-      img("1554224155-6726b3ff858f"),
-      img("1460925895917-afdab827c52f"),
-      img("1551288049-bebda4e38f71"),
-      img("1543286386-713bdd548da4"),
+      "/images/fainens 2.webp",
+      "/images/fainens 4.webp",
+      "/images/fainens 3.webp",
+      "/images/fainens 1.webp",
     ],
     demo: "#",
     live: "https://baitulloh.com",
@@ -139,7 +139,7 @@ export const PROJECTS = [
       "An online job-vacancy portal connecting job seekers and employers — the final thesis project.",
     description:
       "An online job board developed as a university thesis project using PHP Native, MySQL, and Bootstrap. It allows employers to post vacancies and job seekers to register, build profiles, search listings, and apply online. Includes an admin panel for moderating postings and managing applicants.",
-    tech: ["PHP Native", "MySQL", "Bootstrap"],
+    tech: ["React","PHP Native", "MySQL", "Bootstrap"],
     images: [
       img("1486312338219-ce68d2c6f44d"),
       img("1517245386807-bb43f82c33c4"),
