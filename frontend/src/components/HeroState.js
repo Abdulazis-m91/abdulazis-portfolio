@@ -114,10 +114,10 @@ export const HeroState = ({ onNavigate }) => {
             <Button
               asChild
               variant="outline"
-              className="h-12 rounded-xl border-[var(--border-hex)] bg-transparent px-6 text-[var(--fg)] hover:bg-[rgba(37,99,235,0.08)]"
-            >
+              className="h-12 rounded-xl border-[var(--border-hex)] bg-transparent px-6 text-[var(--fg)] hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)]"
+              >
               <a href={PROFILE.cv} download data-testid="hero-download-cv-button">
-                <Download className="mr-2 h-4 w-4" /> Download CV
+                <Download className="mr-2 h-4 w-4" /> Download RESUME
               </a>
             </Button>
           </div>
