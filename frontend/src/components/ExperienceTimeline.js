@@ -30,7 +30,18 @@ const TimelineItem = ({ item, index }) => (
       </div>
       <h3 className="font-display mt-3 text-lg font-semibold text-[var(--fg)]">{item.role}</h3>
       <p className="mt-0.5 text-sm font-medium text-[var(--accent-hex)]">{item.org}</p>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+      {item.points ? (
+  <ul className="mt-2 space-y-1">
+    {item.points.map((point, i) => (
+      <li key={i} className="flex gap-2 text-sm leading-relaxed text-muted-foreground">
+        <span className="text-[var(--primary-hex)] mt-0.5">▹</span>
+        <span>{point}</span>
+      </li>
+    ))}
+  </ul>
+) : (
+  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.desc}</p>
+)}
     </div>
   </motion.div>
 );
