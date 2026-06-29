@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
-{project.live ? (
-  <a href={project.live} target="_blank" rel="noopener noreferrer">
-    <ExternalLink className="mr-1.5 h-3.5 w-3.5" /> Visit Site
-  </a>
-) : (
-  <span><ExternalLink className="mr-1.5 inline h-3.5 w-3.5" /> Visit Site</span>
-)}
+import { ExternalLink, Globe, Play, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { SectionShell } from "./SectionShell";
 import { PROJECTS } from "../data/content";
@@ -105,7 +99,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
                 <Play className="mr-1.5 h-3.5 w-3.5" /> Live Demo
               </a>
             ) : (
-              <span><Play className="mr-1.5 inline h-3.5 w-3.5" /> Demo</span>
+              <span><Play className="mr-1.5 inline h-3.5 w-3.5" /> Live Demo</span>
             )}
           </Button>
           <Button
