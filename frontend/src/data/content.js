@@ -165,28 +165,47 @@ export const EXPERIENCE = [
     period: "Jan 2024 — Present",
     role: "Full-Stack Web Developer",
     org: "Self-Employed — Lampung, Indonesia",
-    desc: "Engineered 3+ custom web applications for clients across education and business sectors. Delivered a Finance Management System (500+ users), SmartCard RFID Attendance System (300+ students), and POS/Cashier System for SMEs. Integrated AI features using OpenAI and Claude API.",
+    points: [
+      "Engineered 3+ custom web applications for clients across education and business sectors",
+      "Delivered a Finance Management System serving 500+ users, reducing manual reporting time by 70%",
+      "Built SmartCard RFID Attendance System integrating ESP32 hardware for 300+ students and 30+ teachers",
+      "Developed POS/Cashier System for SMEs, reducing manual errors by 60%",
+      "Integrated AI features using OpenAI and Claude API, improving user productivity by 40%",
+    ],
     current: true,
   },
-{
+  {
     period: "Jan 2024 — Jan 2026",
     role: "Multimedia & Digital Technology Instructor",
     org: "BLK Komunitas Rowdotul Alimir Robbaniy — Kemnaker RI",
-    desc: "Teaching Multimedia and Digital Technology under Indonesia's Ministry of Manpower. Delivering hands-on training in web development and digital tools to students per batch.",
+    points: [
+      "Teaching Multimedia and Digital Technology under Indonesia's Ministry of Manpower",
+      "Delivering hands-on training in web development and digital tools to students per batch",
+      "Developed structured curriculum for practical web programming and digital literacy",
+    ],
     current: false,
   },
   {
     period: "Aug 2022 — Apr 2024",
     role: "IT Support Specialist & Web Developer",
     org: "Yayasan Baitulloh — Lampung, Indonesia",
-    desc: "Oversaw IT infrastructure and developed web solutions for a nonprofit Islamic school with 60+ members. Managed 500+ student/teacher records with 99% data accuracy. Resolved 50+ IT support tickets monthly.",
+    points: [
+      "Oversaw IT infrastructure and developed web solutions for a nonprofit Islamic school with 60+ members",
+      "Administered student and teacher database systems managing 500+ records with 99% data accuracy",
+      "Resolved 50+ IT support tickets monthly including network troubleshooting and hardware maintenance",
+      "Ensured 99% uptime of IT infrastructure supporting daily operations for 30+ staff and students",
+    ],
     current: false,
   },
   {
     period: "Apr 2018 — Sep 2019",
     role: "Web Developer Intern",
     org: "Dinas Tenaga Kerja Sleman — Yogyakarta, Indonesia",
-    desc: "Built a full-featured Online Job Vacancy Website as undergraduate thesis, connecting job seekers with 30+ employers in Sleman region. Supported digital recruitment services for 100+ job seekers.",
+    points: [
+      "Built a full-featured Online Job Vacancy Website as undergraduate thesis",
+      "Connected job seekers with 30+ employers in Sleman region",
+      "Supported digital recruitment services for 100+ job seekers in Sleman, Yogyakarta",
+    ],
     current: false,
   },
 ];
