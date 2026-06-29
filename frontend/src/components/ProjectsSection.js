@@ -64,11 +64,11 @@ const ProjectCard = ({ project, index, onOpen }) => {
               <p className="text-sm leading-relaxed text-muted-foreground">{project.system}</p>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-1">✅ Benefits</p>
-              <ul className="space-y-1">
+              <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-2">⚡ Key Features</p>
+              <ul className="space-y-2">
                 {project.benefits.map((b, i) => (
                   <li key={i} className="text-sm text-muted-foreground flex gap-2">
-                    <span className="text-green-400 mt-0.5">•</span>
+                    <span className="text-[var(--primary-hex)] font-bold mt-0.5">✓</span>
                     <span>{b}</span>
                   </li>
                 ))}
@@ -259,16 +259,16 @@ const ProjectDetailModal = ({ project, open, onClose }) => {
                     <p className="text-sm leading-relaxed text-muted-foreground">{project.system}</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-1">✅ Benefits</p>
-                    <ul className="space-y-1">
+                   <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-2">⚡ Key Features</p>
+                    <ul className="space-y-2">
                       {project.benefits.map((b, i) => (
                         <li key={i} className="text-sm text-muted-foreground flex gap-2">
-                          <span className="text-green-400 mt-0.5">•</span>
+                          <span className="text-[var(--primary-hex)] font-bold mt-0.5">✓</span>
                           <span>{b}</span>
                         </li>
                       ))}
                     </ul>
-                  </div>
+                     </div>
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-[var(--primary-hex)] mb-1">📝 Description</p>
                     <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
