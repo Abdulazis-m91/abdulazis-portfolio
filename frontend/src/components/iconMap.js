@@ -14,6 +14,9 @@ import {
   Cpu,
   Radio,
   Server,
+  Sparkles,
+  Bot,
+  Wand2,
 } from "lucide-react";
 
 export const navIcons = {
@@ -38,4 +41,7 @@ export const lucideMap = {
   cpu: Cpu,
   radio: Radio,
   server: Server,
+  sparkles: Sparkles,
+  bot: Bot,
+  "wand-2": Wand2,
 };
