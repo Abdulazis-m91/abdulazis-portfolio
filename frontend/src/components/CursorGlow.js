@@ -32,8 +32,8 @@ export const CursorGlow = () => {
 
     const loop = () => {
       // smooth lerp toward the cursor position
-      current.x += (target.x - current.x) * 0.14;
-      current.y += (target.y - current.y) * 0.14;
+      current.x += (target.x - current.x) * 0.30;
+      current.y += (target.y - current.y) * 0.30;
       if (glowRef.current) {
         // 80px aura => offset by half (40px) to center on the cursor
         glowRef.current.style.transform = `translate3d(${current.x - 40}px, ${current.y - 40}px, 0)`;
