@@ -77,7 +77,7 @@ export const SidebarNav = ({ active, onNavigate }) => {
                 rel="noopener noreferrer"
                 aria-label={s.name}
                 data-testid={`sidebar-social-${s.name.toLowerCase()}`}
-                className="grid h-9 w-9 place-items-center rounded-lg border border-[var(--border-hex)] text-muted-foreground transition-colors hover:bg-[rgba(37,99,235,0.10)] hover:text-[var(--primary-hex)]"
+                className="grid h-9 w-9 place-items-center rounded-lg border border-[var(--border-hex)] text-muted-foreground transition-colors hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)]"
               >
                 <Icon className="h-4 w-4" />
               </a>
