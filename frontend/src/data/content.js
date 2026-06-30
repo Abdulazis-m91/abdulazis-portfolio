@@ -267,8 +267,8 @@ export const TECH_GROUPS = [
   {
     category: "AI & Integration",
     items: [
-      { name: "OpenAI API", lucide: "sparkles" },
-      { name: "Claude API", lucide: "bot" },
+      { name: "OpenAI API", logo: dev("openai/openai-original.svg") },
+      { name: "Claude API", lucide: "sparkles" },
       { name: "Prompt Engineering", lucide: "wand-2" },
     ],
   },
