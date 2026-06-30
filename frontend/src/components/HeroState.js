@@ -133,8 +133,7 @@ export const HeroState = ({ onNavigate }) => {
                   rel="noopener noreferrer"
                   aria-label={s.name}
                   data-testid={`hero-social-${s.name.toLowerCase()}`}
-                  className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--border-hex)] bg-[var(--surface)] text-[var(--fg)] transition-colors hover:bg-[rgba(37,99,235,0.10)] hover:text-[var(--primary-hex)]"
-                >
+                  className="grid h-10 w-10 place-items-center rounded-xl border border-[var(--border-hex)] bg-[var(--surface)] text-[var(--fg)] transition-colors hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)]" >
                   <Icon className="h-[18px] w-[18px]" />
                 </a>
               );

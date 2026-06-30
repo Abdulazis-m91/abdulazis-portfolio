@@ -70,7 +70,7 @@ export const PROJECTS = [
       "/images/smartpresence-1.webp",
       "/images/tampilan.webp",
     ],
-    demo: "#",
+    demo: null,
     live: "https://yayasanbaitulloh.com",
   },
  {
@@ -98,7 +98,7 @@ export const PROJECTS = [
       "/images/fainens 3.webp",
       "/images/fainens 2.webp",
     ],
-    demo: "#",
+    demo: null,
     live: "https://baitulloh.com",
   },
 {
@@ -126,7 +126,7 @@ export const PROJECTS = [
       img("1517694712202-14dd9538aa97"),
       img("1498050108023-c5249f4df085"),
     ],
-    demo: "#",
+    demo: null,
     live: "https://fkki.org",
   },
 
@@ -150,8 +150,8 @@ export const PROJECTS = [
       "GoalWorld is a full-stack sports tracking application built with a Laravel REST API backend (using Sanctum authentication and TheSportsDB API integration) and a React + TypeScript frontend styled with Tailwind CSS and managed with Zustand. Users can browse leagues, view team details, check recent match results, and save favorite teams for quick access.",
     tech: ["React", "TypeScript", "Tailwind", "Zustand", "Laravel", "Sanctum"],
     images: [
-      "/images/rfid-software.webp",
-      "/images/tampilan.webp",
+      "/images/goal1.webp",
+      "/images/goal2.webp",
     ],
     demo: "https://sports-frontend-eta.vercel.app",
     live: null,
@@ -181,7 +181,7 @@ export const PROJECTS = [
       img("1454165804606-c3d57bc86b40"),
       img("1521737604893-d14cc237f11d"),
     ],
-    demo: "#",
+    demo: null,
     live: null,
   },
 ];
