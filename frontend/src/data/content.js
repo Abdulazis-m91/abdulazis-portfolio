@@ -129,6 +129,33 @@ export const PROJECTS = [
     demo: "#",
     live: "https://fkki.org",
   },
+
+  {
+    id: "goalworld",
+    title: "GoalWorld",
+    client: "Personal Project",
+    domain: "sports-frontend-eta.vercel.app",
+    year: "2026",
+    system:
+      "A sports information app displaying live league standings, team details, and match schedules using TheSportsDB API integration.",
+    benefits: [
+      "User authentication with Laravel Sanctum for secure access",
+      "Browse leagues, teams, and recent match results in real-time",
+      "Favorite teams saved directly to user's database profile",
+      "Match times automatically converted to WIB (Indonesia time)",
+    ],
+    short:
+      "A sports information app for tracking leagues, teams, and live match schedules with favorite team tracking.",
+    description:
+      "GoalWorld is a full-stack sports tracking application built with a Laravel REST API backend (using Sanctum authentication and TheSportsDB API integration) and a React + TypeScript frontend styled with Tailwind CSS and managed with Zustand. Users can browse leagues, view team details, check recent match results, and save favorite teams for quick access.",
+    tech: ["React", "TypeScript", "Tailwind", "Zustand", "Laravel", "Sanctum"],
+    images: [
+      "/images/rfid-software.webp",
+      "/images/tampilan.webp",
+    ],
+    demo: "https://sports-frontend-eta.vercel.app",
+    live: null,
+  },
 {
     id: "lowongan-kerja",
     title: "Situs Lowongan Kerja Online",
