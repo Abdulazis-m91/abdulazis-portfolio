@@ -91,7 +91,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
             variant="ghost"
             size="sm"
             data-testid="project-card-demo-button"
-            className="h-9 rounded-lg border border-[var(--border-hex)] px-3 text-xs hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)]"
+            className="h-9 flex-1 rounded-lg border border-[var(--border-hex)] px-3 text-xs hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)]"
             onClick={project.demo === "#" ? () => onOpen(project) : undefined}
           >
             {project.demo && project.demo !== "#" ? (
@@ -108,7 +108,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
             variant="ghost"
             size="sm"
             data-testid="project-card-live-website-button"
-            className="h-9 rounded-lg border border-[var(--border-hex)] px-3 text-xs hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)] disabled:opacity-50"
+            className="h-9 flex-1 rounded-lg border border-[var(--border-hex)] px-3 text-xs hover:bg-[var(--primary-hex)] hover:text-white hover:border-[var(--primary-hex)] disabled:opacity-50"
           >
             {project.live ? (
               <a href={project.live} target="_blank" rel="noopener noreferrer">
