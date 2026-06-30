@@ -264,6 +264,14 @@ export const TECH_GROUPS = [
       { name: "VS Code", logo: dev("vscode/vscode-original.svg") },
     ],
   },
+  {
+    category: "AI & Integration",
+    items: [
+      { name: "OpenAI API", lucide: "sparkles" },
+      { name: "Claude API", lucide: "bot" },
+      { name: "Prompt Engineering", lucide: "wand-2" },
+    ],
+  },
 ];
 
 export const EDUCATION = [
