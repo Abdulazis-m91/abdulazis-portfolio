@@ -123,8 +123,6 @@ export const PROJECTS = [
     images: [
       img("1576091160550-2173dba999ef"),
       img("1505751172876-fa1923c5c528"),
-      img("1517694712202-14dd9538aa97"),
-      img("1498050108023-c5249f4df085"),
     ],
     demo: null,
     live: "https://fkki.org",
@@ -133,7 +131,7 @@ export const PROJECTS = [
   {
     id: "goalworld",
     title: "GoalWorld",
-    client: "Personal Project",
+    client: "Self-Developed",
     domain: "sports-frontend-eta.vercel.app",
     year: "2026",
     system:
@@ -178,8 +176,6 @@ export const PROJECTS = [
     images: [
       img("1486312338219-ce68d2c6f44d"),
       img("1517245386807-bb43f82c33c4"),
-      img("1454165804606-c3d57bc86b40"),
-      img("1521737604893-d14cc237f11d"),
     ],
     demo: null,
     live: null,
