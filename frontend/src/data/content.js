@@ -121,8 +121,8 @@ export const PROJECTS = [
       "FKKI is a digital platform for the Forum Komunikasi Kesehatan Islam, combining a public-facing content site with member management and discussion features. Built with React + TypeScript on the frontend and a hybrid PHP/MySQL + Supabase backend, it supports article publishing, event announcements, and community engagement for health professionals.",
     tech: ["React", "TypeScript", "PHP", "MySQL", "Supabase"],
     images: [
-      img("1576091160550-2173dba999ef"),
-      img("1505751172876-fa1923c5c528"),
+      "/images/fkki1.webp",
+      "/images/fkki2.webp",
     ],
     demo: null,
     live: "https://fkki.org",
