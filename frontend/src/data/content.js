@@ -49,7 +49,6 @@ export const PROJECTS = [
     id: "smartpresence",
     title: "SmartPresence - RFID Attendance System",
     client: "Yayasan Baitulloh",
-    domain: "yayasanbaitulloh.com",
     year: "2026",
     system:
       "An RFID-based attendance system connecting ESP32 hardware with a real-time web dashboard for automated student and teacher attendance monitoring.",
@@ -77,7 +76,6 @@ export const PROJECTS = [
     id: "baitulloh-finance",
     title: "Baitulloh Finance Management System",
     client: "Yayasan Baitulloh",
-    domain: "baitulloh.com",
     year: "2025",
     system:
       "A web-based finance management system handling income, expenses, and automated financial reporting for school and pesantren operations at Yayasan Baitulloh.",
@@ -105,7 +103,6 @@ export const PROJECTS = [
     id: "fkki",
     title: "FKKI — Islamic Health Forum",
     client: "Forum Komunikasi Kesehatan Islam",
-    domain: "fkki.org",
     year: "2025",
     system:
       "A digital platform for Forum Komunikasi Kesehatan Islam to manage and organize healthcare professionals (nurses, doctors, specialists) across multiple provinces in Indonesia.",
@@ -132,7 +129,6 @@ export const PROJECTS = [
     id: "goalworld",
     title: "GoalWorld",
     client: "Self-Developed",
-    domain: "sports-frontend-eta.vercel.app",
     year: "2026",
     system:
       "A sports information app displaying live league standings, team details, and match schedules using TheSportsDB API integration.",
